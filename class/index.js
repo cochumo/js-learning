@@ -41,3 +41,14 @@ console.log({
     titleArea: footer.titleArea(),
   },
 })
+
+// 静的メソッド
+class Static {
+  static Distance(x, y) {
+    return x + y
+  }
+}
+
+console.log({
+  distance: Static.Distance(100, 30),
+})
