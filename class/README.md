@@ -1,4 +1,4 @@
-# classとextends
+# class
 
 ```bash
 $ node index.js
