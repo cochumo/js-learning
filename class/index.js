@@ -1,5 +1,6 @@
 'use strict'
 
+// クラス
 class Square {
   constructor(width, height) {
     this.width = width
@@ -20,6 +21,7 @@ console.log({
   },
 })
 
+// 継承
 class Title extends Square {
   constructor(width, height) {
     super(width, height)
