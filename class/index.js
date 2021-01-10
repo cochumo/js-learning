@@ -100,3 +100,33 @@ console.log({
     area: polygon.area(),
   },
 })
+
+// メソッドのオーバーライド
+class Modal extends Square {
+  constructor(width, height) {
+    super(width, height)
+  }
+
+  area() {
+    return Number.isFinite(this.width) && Number.isFinite(this.height)
+      ? super.area()
+      : 'widthまたはheightがNumberではなかったのでオーバライドしました。'
+  }
+}
+
+let modalDisplayImage = new Modal(250, 300)
+console.log({
+  modalDisplayImage: {
+    width: modalDisplayImage.width,
+    height: modalDisplayImage.height,
+    area: modalDisplayImage.area(),
+  },
+})
+modalDisplayImage.width = 'text'
+console.log({
+  modalDisplayImage: {
+    width: modalDisplayImage.width,
+    height: modalDisplayImage.height,
+    area: modalDisplayImage.area(),
+  },
+})
