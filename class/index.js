@@ -52,3 +52,51 @@ class Static {
 console.log({
   distance: Static.Distance(100, 30),
 })
+
+// プライベートメンバーとgetter, setter
+const propWidth = Symbol()
+const propHeight = Symbol()
+
+class Polygon {
+  constructor(width, height) {
+    this[propWidth] = width
+    this[propHeight] = height
+  }
+
+  area() {
+    return this[propWidth] * this[propHeight]
+  }
+
+  get Height() {
+    return this[propHeight]
+  }
+  set Height(value) {
+    this[propHeight] = value
+  }
+  get Width() {
+    return this[propWidth]
+  }
+  set Width(value) {
+    this[propWidth] = value
+  }
+}
+
+let polygon = new Polygon(2, 5)
+console.log({
+  polygon: {
+    width: polygon.Width,
+    height: polygon.Height,
+    area: polygon.area(),
+  },
+})
+
+// set width and height
+polygon.Width = 3
+polygon.Height = 6
+console.log({
+  polygon: {
+    width: polygon.Width,
+    height: polygon.Height,
+    area: polygon.area(),
+  },
+})
