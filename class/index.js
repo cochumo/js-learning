@@ -153,3 +153,25 @@ console.log({
     height: rectangle.height,
   },
 })
+
+// es6以前のクラスの書き方
+function Dog(name) {
+  this.setName(name)
+}
+Dog.prototype = {
+  setName: function (name) {
+    this._name = name
+  },
+
+  getName: function () {
+    return this._name
+  },
+
+  walk: function () {
+    console.log(this._name + 'は歩いています')
+  },
+}
+var pochi = new Dog('ポチ')
+pochi.walk()
+var rasshi = new Dog('ラッシー')
+rasshi.walk()
