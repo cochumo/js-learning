@@ -130,3 +130,26 @@ console.log({
     area: modalDisplayImage.area(),
   },
 })
+
+// パラメータのオーバーロード
+class Rectangle {
+  constructor(width = 0, height = 0) {
+    this.width = width
+    this.height = height
+  }
+}
+let rectangle = new Rectangle()
+console.log({
+  rectangle: {
+    width: rectangle.width,
+    height: rectangle.height,
+  },
+})
+rectangle.width = 20
+rectangle.height = 200
+console.log({
+  rectangle: {
+    width: rectangle.width,
+    height: rectangle.height,
+  },
+})
